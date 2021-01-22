@@ -12,7 +12,6 @@
     --light-green: #99c497;
     --green      : #7ca984;
     --dark-green : #375b4d;
-    --dark       : #36454f;
 }
 
 main {
@@ -26,11 +25,14 @@ main {
 }
 
 article {
-    width: 800px;
-    height: 500px;
+    width: 1250px;
+    height: 700px;
     background-color: var(--paste);
     border: solid 5px var(--paster);
     border-radius: 25px;
+    box-shadow: black 5px 5px 10px;
+    display: grid;
+    
 }
 
 footer {
