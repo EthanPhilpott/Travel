@@ -17,7 +17,63 @@
         <main>
             <article>
                 <section class="form">
+                    <fieldset class="slide slide1">
+                        <legend>Personal Information</legend>
+                        <h2>Personal Information</h2>
+
+                        <div class="user-info">
+                            <div class="user-info-fillables">
+                                <div class="name">
+                                    <label for="fname">First</label>
+                                    <input type="text" name="fname" id="fname">
+                                    <label for="mname">Middle</label>
+                                    <input type="text" name="mname" id="mname">
+                                    <label for="lname">Last</label>
+                                    <input type="text" name="lname" id="lname">
+                                </div>
+                                
+                                <div class="dob">
+                                    <label for="dob">Birthday</label>
+                                    <input type="date" name="dob" id="dob">
+                                </div>
+
+                                <div class="gender">
+                                    <label for="male"><input type="radio" name="gender" id="male">Male</label>
+                                    <label for="female"><input type="radio" name="gender" id="female">Female</label>
+                                    <label for="other"><input type="radio" name="gender" id="other">Other</label>
+                                </div>
+
+                                <div class="contact">
+                                    <label for="pnum">Phone Number</label>
+                                    <input type="tel" name="pnum" id="pnum" placeholder="555-555-5555">
+                                    <label for="email">Email</label>
+                                    <input type="email" name="email" id="email">
+                                </div>
+                            </div>
+                            <div class="pi-graphic">
+                                <div class="pi-graphic-imgs">
+                                    <img src="images/Male-Female.svg" alt="male" class="male">
+                                    <img src="images/Male-Female.svg" alt="female" class="female">
+                                    <img src="images/question.svg" alt="question" class="other">
+                                </div>
+                                <div class="pi-graphic-data">
+                                    <!-- Add some some thigns that are autmatically updated here -->
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="slide slide2">
+                        <legend>Date and City</legend>
+
+                        <h2>Date and City</h2>
+                    </fieldset>
                     
+                    <fieldset class="slide slide3">
+                        <legend>Baggage and Extras</legend>
+
+                        <h2>Baggage and Extras</h2>
+                    </fieldset>
                 </section>
 
                 <section class="slider-nav">
@@ -37,7 +93,7 @@
                             <p>3</p>
                         </div>
                     </div>
-                    
+
                     <div class="arrow-right">
                         <div class="arrow arrow-up"></div>
                         <div class="arrow arrow-down"></div>
@@ -47,7 +103,9 @@
         </main>
 
         <footer>
-            <a href='https://www.freepik.com/vectors/background'>Background vector created by pikisuperstar - www.freepik.com</a>
+            <div><a href='https://www.freepik.com/vectors/background'>Background vector created by pikisuperstar - www.freepik.com</a></div>
+            <div>People Icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+            <div>Question Mark Icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
         </footer>
 
         <script src="script.js"></script>

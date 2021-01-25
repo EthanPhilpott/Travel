@@ -12,6 +12,15 @@
     --light-green: #99c497;
     --green      : #7ca984;
     --dark-green : #375b4d;
+    --pink       : #f08b84;
+}
+
+fieldset {
+    border: none;
+}
+
+legend {
+    display: none;
 }
 
 main {
@@ -117,6 +126,56 @@ article {
     width: 45px;
     height: 45px;
     font-size: 30px;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    margin-bottom: calc(-75vh * .9 + 3.25vw);
+}
+
+.slide h2 {
+    font-family: 'Staatliches', sans-serif;
+    font-size: 40px;
+    color: black;
+}
+
+.slide2 {
+    display: none;
+}
+
+.slide3 {
+    display: none;
+}
+
+.form {
+    padding: 1.5vw;
+}
+
+.male {
+    object-fit: cover;
+    object-position: left;
+    width: 9vw;
+    height: 25vw;
+    display: none;
+}
+
+.female {
+    object-fit: cover;
+    object-position: right;
+    width: 10.5vw;
+    height: 25vw;
+    display: none;
+}
+
+.other {
+    width: 10.5vw;
+}
+
+.user-info {
+    display: grid;
+    height: calc(100% - 40px);
+    grid-template-columns: 60% 40%;
 }
 
 footer {
