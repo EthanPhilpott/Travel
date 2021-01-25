@@ -18,21 +18,105 @@ main {
     background-image: url("images/tropical.jpg");
     min-height: 100vh;
     background-size: cover;
-    background-position: 0 -200px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 article {
-    width: 1250px;
-    height: 700px;
-    background-color: var(--paste);
-    border: solid 5px var(--paster);
-    border-radius: 25px;
+    width:  60vw;
+    height: 75vh;
     box-shadow: black 5px 5px 10px;
     display: grid;
-    
+    grid-template-rows: 90% 10%;
+    border-radius: 25px;
+}
+
+.form {
+    background-color: var(--paste);
+    border: solid 5px var(--paster);
+    border-bottom: none;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.slider-nav {
+    display: flex;
+    background-color: var(--green);
+    border: var(--dark-green) 5px solid;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow {
+    width: 10px;
+    height: 30px;
+    background-color: var(--dark-green);
+    border-radius: 5px;
+}
+
+.arrow-up {
+    transform: rotate(45deg);
+    margin-bottom: -15px;
+}
+
+.arrow-down {
+    transform: rotate(-45deg);
+    margin-top: -15px;
+}
+
+.arrow-left {
+    padding: 0 40px;
+    transition: padding .5s;
+}
+
+.arrow-left:hover {
+    padding: 0 50px 0 30px;
+}
+
+.arrow-right {
+    transform: rotate(180deg);
+    padding: 0 40px;
+    transition: padding .5s;
+}
+
+.arrow-right:hover {
+    padding: 0 50px 0 30px;
+}
+
+.slider-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.slider-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+}
+
+.slider-button p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background-color: var(--dark-green);
+    font-family: 'Staatliches', sans-serif;
+    font-size: 25px;
+    color: var(--green);
+    border-radius: 50%;
+    transition: width .5s, height .5s, font-size .5s;
+}
+
+.slider-button p:hover {
+    width: 45px;
+    height: 45px;
+    font-size: 30px;
 }
 
 footer {
