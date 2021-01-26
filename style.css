@@ -4,6 +4,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Oxygen', sans-serif;
 }
 
 :root {
@@ -60,20 +61,20 @@ article {
 }
 
 .arrow {
-    width: 10px;
-    height: 30px;
+    width: 7px;
+    height: 25px;
     background-color: var(--dark-green);
     border-radius: 5px;
 }
 
 .arrow-up {
     transform: rotate(45deg);
-    margin-bottom: -15px;
+    margin-bottom: -10px;
 }
 
 .arrow-down {
     transform: rotate(-45deg);
-    margin-top: -15px;
+    margin-top: -10px;
 }
 
 .arrow-left {
@@ -175,7 +176,19 @@ article {
 .user-info {
     display: grid;
     height: calc(100% - 40px);
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 70% 30%;
+}
+
+.slide1 .name label {
+    display: grid;
+}
+
+.slide1 input[type=text] {
+    border: solid 2px var(--dark-green);
+    width: 200px;
+    height: 50px;
+    border-radius: 3px;
+    margin-right: -190px;
 }
 
 footer {
