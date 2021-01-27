@@ -1,9 +1,11 @@
 "use strict"
 
 class User {
-    constructor (name) {
+    constructor (personal) {
 
     }
 }
+
+personal = 
 
 console.log()
