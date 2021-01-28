@@ -183,16 +183,30 @@ article {
     display: flex;
 }
 
+.slide1 input {
+    background-color: white;
+}
+
 .slide1 .name label {
     display: flex;
+    align-items: center;
+}
+
+.slide1 .name label p {
+    margin-left: -190px;
+    margin-right: 170px;
+    background-color: white;
+    transition: transform .5s background .5s;
+    padding: 0 5px;
 }
 
 .slide1 input[type=text] {
     border: solid 2px var(--dark-green);
     width: 200px;
-    height: 25px;
+    height: 30px;
     border-radius: 3px;
-}
+    padding: 10px;
+}   
 
 footer {
     background-color: var(--dark-green);
