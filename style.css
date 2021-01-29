@@ -191,6 +191,7 @@ article {
 
 .slide1 input {
     background-color: white;
+    font-size: 15px;
 }
 
 .slide1 input[type="text"] {
@@ -223,23 +224,24 @@ article {
 
 .slide1 label p {
     display: flex;
-    margin-left: -190px;
+    margin-left: -215px;
     background-color: white;
     transition: transform .5s background .5s;
     padding: 0 5px;
+    font-size: 15px;
 }
 
 .slide1 .inputs {
     border: solid 2px var(--dark-green);
-    width: 200px;
+    width: 225px;
     height: 30px;
     border-radius: 3px;
     padding: 10px;
 }   
 
 .slide1 .radio-button-container {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
     border: solid 2px var(--dark-green);
     background-color: white;
@@ -254,8 +256,8 @@ article {
 }
 
 .slide1 input[type=radio]:checked ~ .radio-button-container .radio-button {
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
 }
 
 .slide1 input[type=radio]:checked ~ .radio-button-container {
@@ -273,8 +275,74 @@ article {
 .gender {
     display: flex;
     flex-direction: column;
-    gap: 1px;
+    gap: 10px;
 }
+
+.gender label {
+    display: flex;
+    gap: 10px;
+    font-size: 15px;
+}
+
+.user-info {
+    padding: 30px 20px;
+}
+
+.user-info-fillables {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.dot-container {
+    width: 100px;
+    height: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--dark-green);
+}
+
+.dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+}
+
+.dob, .pnum, .email, .fname, .lname {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.dob img, .pnum img, .email img, .fname img, .lname img {
+    width: 25px;
+    height: 25px;
+}
+
+.name input {
+    width: 400px;
+}
+
+.pi-graphic-imgs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pi-graphic-data {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 25px;
+}
+
 
 footer {
     background-color: var(--dark-green);
