@@ -498,6 +498,34 @@ input[type="number"] {
     gap: 10px;
 }
 
+.baggage-and-extras {
+    display: flex;
+}
+
+.not-side {
+    width: 575px;
+    height: 525px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    
+}
+
+.not-side p {
+    width: 100px;
+    height: 50px;
+    background-color: white;
+    border: solid var(--dark-green) 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: border-color .5s;
+}
+
+.not-side p:hover {
+    border-color: var(--pink);
+}
+
 .side {
     display: flex;
     flex-direction: column;

@@ -12,7 +12,6 @@ let inputs = document.getElementsByClassName('inputs');
 for (let inp of inputs) {
     inp.addEventListener('focus', (e) => {
         let txt = e.path[0].parentElement.children[1].children[0]
-        console.log(txt)
         let inp = e.path[0].value;
         if (inp === '') {
             let x = 0;
@@ -109,7 +108,6 @@ for (let i = 0; i < sliderButtons.length; i++) {
             }
             else {
                 slides[slideNum].style.transform = `scale(${shrink})`
-                console.log(slides[slideNum].style.transform)
                 shrink -= 0.01
             }
         }, 1);
@@ -125,7 +123,6 @@ for (let i = 0; i < sliderButtons.length; i++) {
                 }
                 else {
                     slides[slideNum].style.transform = `scale(${grow})`
-                    console.log(slides[slideNum].style.transform)
                     grow += 0.01
                 }
             }, 1);
@@ -142,7 +139,6 @@ arrowRight.addEventListener('click', () => {
         }
         else {
             slides[slideNum].style.transform = `scale(${shrink})`
-            console.log(slides[slideNum].style.transform)
             shrink -= 0.01
         }
     }, 1);
@@ -159,7 +155,6 @@ arrowRight.addEventListener('click', () => {
             }
             else {
                 slides[slideNum].style.transform = `scale(${grow})`
-                console.log(slides[slideNum].style.transform)
                 grow += 0.01
             }
         }, 1);
@@ -175,7 +170,6 @@ arrowLeft.addEventListener('click', () => {
         }
         else {
             slides[slideNum].style.transform = `scale(${shrink})`
-            console.log(slides[slideNum].style.transform)
             shrink -= 0.01
         }
     }, 1);
@@ -192,7 +186,6 @@ arrowLeft.addEventListener('click', () => {
             }
             else {
                 slides[slideNum].style.transform = `scale(${grow})`
-                console.log(slides[slideNum].style.transform)
                 grow += 0.01
             }
         }, 1);
@@ -220,6 +213,91 @@ down.addEventListener('click', () => {
     if (baggageNum.value > 10) baggageNum.value = 10;
 })
 
+let append = document.getElementById('append');
+
+append.addEventListener('click', () => {
+    let personal = {
+        fname : document.getElementById("fname").value,
+        lname : document.getElementById("lname").value,
+        dob : document.getElementById("dob").value,
+        pnum : document.getElementById("pnum").value,
+        email : document.getElementById("email").value,
+        male : document.getElementById("male").value,
+        female : document.getElementById("female").value,
+        other : document.getElementById("other").value,
+    }
+    let tripInfo = {
+        cityLeaving : document.getElementById("city-leaving").value,
+        dateLeaving : document.getElementById("date-leaving").value,
+        cityGoing : document.getElementById("city-going").value,
+        dateReturning : document.getElementById("date-returning").value,
+    }
+    let extras = {
+        baggage : document.getElementById("baggage").value,
+        chicken : document.getElementById("chicken").value,
+        fish : document.getElementById("fish").value,
+        vegetarian : document.getElementById("vegetarian").value,
+        exLegroom : document.getElementById("exLegroom").value,
+        windowSeat : document.getElementById("window-seat").value,
+        headphones : document.getElementById("headphones").value,
+    }
+    
+    let user = new User (personal, tripInfo, extras)
+    userId++
+})
+
+let userId = 0;
+
+class User {
+    constructor (personal, tripInfo, extras) {
+        this.personal = personal;
+        this.tripInfo = tripInfo;
+        this.extras = extras;
+        this.userId = userId;
+    }
+
+    CanDrink () {
+        if (Date.now() - new Date ( this.personal.dob ) > 1000 * 60 * 60 * 24 * 365 * 21) return true
+        else return false
+    }
+
+    Cost () {
+        let total = 300;
+        total += this.extras.baggage * 20;
+        if (this.extras.exLegroom === 'on') total += 10;
+        if (this.extras.windowSeat === 'on') total += 10;
+        if (this.extras.headphones === 'on') total += 10;
+        return total;
+    }
+
+    TripDuration () {
+        return (new Date (this.tripInfo.dateReturning) - new Date (this.tripInfo.dateLeaving)) / (1000 * 60 * 60 * 24)
+    }
+}
+
+let user = new User ({
+    fname : "Ethan",
+    lname : "Philott",
+    dob : "1/1/2000",
+    pnum : "555-555-5555",
+    email : "exmaple@gmail.com",
+    male : "on",
+    female : "off",
+    other : "off",
+}, {
+    cityLeaving : "Pheonix",
+    dateLeaving : "1/1/2020",
+    cityGoing : "Somewhere else",
+    dateReturning : "1/3/2020",
+}, {
+    baggage : "5",
+    chicken : "on",
+    fish : "off",
+    vegetarian : "off",
+    exLegroom : "off",
+    windowSeat : "off",
+    headphones : "on",
+})
 
 
 
