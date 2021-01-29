@@ -96,6 +96,7 @@ let arrowRight = document.getElementById('arrow-right');
 
 for (let i = 1; i < slides.length; i++) {
     slides[i].style.transform = `scale(0)`
+    slides[i].style.display = 'none'
 }
 
 for (let i = 0; i < sliderButtons.length; i++) {
@@ -197,5 +198,28 @@ arrowLeft.addEventListener('click', () => {
         }, 1);
     }, 1100);
 });
+
+let up = document.getElementById('up');
+let down = document.getElementById('down');
+let baggageNum = document.getElementById('baggage')
+
+baggageNum.addEventListener('input', () => {
+    if (baggageNum.value < 0 ) baggageNum.value = 0 ;
+    if (baggageNum.value > 10) baggageNum.value = 10;
+})
+
+up.addEventListener('click', () => {
+    baggageNum.value = Number(baggage.value) + 1
+    if (baggageNum.value < 0 ) baggageNum.value = 0 ;
+    if (baggageNum.value > 10) baggageNum.value = 10;
+})
+
+down.addEventListener('click', () => {
+    baggageNum.value = Number(baggage.value) - 1
+    if (baggageNum.value < 0 ) baggageNum.value = 0 ;
+    if (baggageNum.value > 10) baggageNum.value = 10;
+})
+
+
 
 

@@ -24,7 +24,7 @@ legend {
     display: none;
 }
 
-input[type="radio"] {
+input[type="radio"], input[type="checkbox"] {
     visibility: hidden;
     margin-right: -10px;
 }
@@ -146,14 +146,6 @@ article {
     color: black;
 }
 
-.slide2 {
-    display: none;
-}
-
-.slide3 {
-    display: none;
-}
-
 .form {
     padding: 1.5vw;
 }
@@ -184,36 +176,36 @@ article {
     grid-template-columns: 70% 30%;
 }
 
-.slide1 .name, .slide1 .contact {
+.name, .slide1 .contact {
     display: flex;
     gap: 30px;
 }
 
-.slide1 input {
+input {
     background-color: white;
     font-size: 15px;
 }
 
-.slide1 input[type="text"] {
+input[type="text"] {
     transition: border-color .5s;
 }
 
-.slide1 input[type="text"], 
-.slide1 input[type="email"], 
-.slide1 input[type="tel"],
-.slide1 input[type="date"] {
+input[type="text"], 
+input[type="email"], 
+input[type="tel"],
+input[type="date"] {
     border-color: var(--dark-green);
     outline: none;
 }
 
-.slide1 input[type="text"]:focus, 
-.slide1 input[type="email"]:focus, 
-.slide1 input[type="tel"]:focus,
-.slide1 input[type="date"]:focus {
+input[type="text"]:focus, 
+input[type="email"]:focus, 
+input[type="tel"]:focus,
+input[type="date"]:focus {
     border-color: var(--pink);
 }
 
-.slide1 label {
+label {
     display: flex;
     align-items: center;
 }
@@ -222,7 +214,7 @@ article {
     display: flex;
 }
 
-.slide1 label p {
+label p {
     display: flex;
     margin-left: -215px;
     background-color: white;
@@ -239,7 +231,15 @@ article {
     padding: 10px;
 }   
 
-.slide1 .radio-button-container {
+.slide2 .inputs {
+    border: solid 2px var(--dark-green);
+    width: 225px;
+    height: 30px;
+    border-radius: 3px;
+    padding: 10px;
+}   
+
+.radio-button-container {
     width: 25px;
     height: 25px;
     border-radius: 50%;
@@ -251,20 +251,20 @@ article {
     transition: border-color .5s;
 }
 
-.slide1 .radio-button-container:hover {
+.radio-button-container:hover {
     border-color: var(--pink);
 }
 
-.slide1 input[type=radio]:checked ~ .radio-button-container .radio-button {
+input[type=radio]:checked ~ .radio-button-container .radio-button {
     width: 15px;
     height: 15px;
 }
 
-.slide1 input[type=radio]:checked ~ .radio-button-container {
+input[type=radio]:checked ~ .radio-button-container {
     border-color: var(--pink);
 }
 
-.slide1 .radio-button {
+.radio-button {
     width: 0px;
     height: 0px;
     background-color: var(--pink);
@@ -324,7 +324,6 @@ article {
 .dob img, .pnum img, .email img, .fname img, .lname img {
     width: 25px;
     height: 25px;
-    transform: scale(100px, 0px);
 }
 
 .name input {
@@ -344,6 +343,166 @@ article {
     font-size: 25px;
 }
 
+.slide2 {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 100px 200px;
+}
+
+.date-and-city {
+    padding: 30px 20px;
+}
+
+.date-and-city-graphic {
+    display: flex;
+    justify-content: space-between;
+}
+
+.date-and-city-graphic img {
+    width: 200px;
+    height: 200px;
+}
+
+.date-and-city-graphic img:nth-of-type(2) {
+    width: 150px;
+    height: 150px;
+    transform: rotate(-15deg);
+}
+
+.date-and-city-info {
+    height: 250px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.returning, .leaving {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.radio-button-container:hover {
+    border-color: var(--pink);
+}
+
+input[type="checkbox"]:checked ~ .check * {
+    opacity: 1;
+}
+
+input[type="checkbox"]:checked ~ .check {
+    border-color: var(--pink);
+}
+
+input[type="checkbox"]:hover ~ .check {
+    border-color: var(--pink);
+}
+
+.check {
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    border: solid var(--dark-green) 2px;
+    transition: border-color .25s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.short {
+    width: 5px;
+    height: 8px;
+    background-color: var(--pink);
+    opacity: 0;
+    transition: opacity .25s;
+    transform: rotate(-45deg) translate(-2px, 0);
+    margin-left: -2px;
+    border-radius: 2.5px;
+}
+
+.long {
+    width: 5px;
+    height: 17px;
+    background-color: var(--pink);
+    opacity: 0;
+    transition: opacity .25s;
+    transform: rotate(45deg);
+    border-radius: 2.5px;
+}
+
+.number-input, .baggage {
+    display: flex;
+    align-items: center;
+}
+
+.baggage {
+    display: flex;
+    gap: 20px;
+}
+
+.updown {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: var(--dark-green) solid 2px;
+    user-select: none;
+}
+
+.up {
+    border-left: none;
+}
+
+.up:active {
+    border-color: var(--pink);
+    color: var(--pink);
+}
+
+.down {
+    border-right: none;
+}
+
+.down:active {
+    border-color: var(--pink);
+    color: var(--pink);
+}
+
+input[type="number"] {
+    width: 100px;
+    text-align: center;
+    outline: none;
+    height: 25px;
+}
+
+.food, .extras {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.hehe {
+    display: flex;
+    gap: 40px;
+}
+
+.hehe label {
+    display: flex;
+    gap: 10px;
+}
+
+.side {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
 footer {
     background-color: var(--dark-green);
