@@ -324,6 +324,7 @@ article {
 .dob img, .pnum img, .email img, .fname img, .lname img {
     width: 25px;
     height: 25px;
+    transform: scale(100px, 0px);
 }
 
 .name input {

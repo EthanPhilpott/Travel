@@ -88,4 +88,114 @@ LNAME_INPUT.addEventListener("blur", () => {
     LNAME.innerText = LNAME_INPUT.value
 })
 
+let slideNum = 0;
+let slides = document.getElementsByClassName("slide");
+let sliderButtons = document.getElementsByClassName('slider-button');
+let arrowLeft = document.getElementById('arrow-left');
+let arrowRight = document.getElementById('arrow-right');
+
+for (let i = 1; i < slides.length; i++) {
+    slides[i].style.transform = `scale(0)`
+}
+
+for (let i = 0; i < sliderButtons.length; i++) {
+    sliderButtons[i].addEventListener("click", () => {
+        let shrink = 1;
+        let id = setInterval(() => {
+            if (shrink <= 0) {
+                clearInterval(id);
+                slides[slideNum].style.display = 'none';
+            }
+            else {
+                slides[slideNum].style.transform = `scale(${shrink})`
+                console.log(slides[slideNum].style.transform)
+                shrink -= 0.01
+            }
+        }, 1);
+
+        setTimeout(() => {
+            slideNum = i;
+            slides[slideNum].style.display = 'block';
+
+            let grow = 0;
+            let id2 = setInterval(() => {
+                if (grow >= 1) {
+                    clearInterval(id2);
+                }
+                else {
+                    slides[slideNum].style.transform = `scale(${grow})`
+                    console.log(slides[slideNum].style.transform)
+                    grow += 0.01
+                }
+            }, 1);
+        }, 1100);
+    })
+}
+
+arrowRight.addEventListener('click', () => {
+    let shrink = 1;
+    let id = setInterval(() => {
+        if (shrink <= 0) {
+            clearInterval(id);
+            slides[slideNum].style.display = 'none';
+        }
+        else {
+            slides[slideNum].style.transform = `scale(${shrink})`
+            console.log(slides[slideNum].style.transform)
+            shrink -= 0.01
+        }
+    }, 1);
+
+    setTimeout(() => {
+        if (slideNum === 2) slideNum = 0;
+        else slideNum++;
+        slides[slideNum].style.display = 'block';
+
+        let grow = 0;
+        let id2 = setInterval(() => {
+            if (grow >= 1) {
+                clearInterval(id2);
+            }
+            else {
+                slides[slideNum].style.transform = `scale(${grow})`
+                console.log(slides[slideNum].style.transform)
+                grow += 0.01
+            }
+        }, 1);
+    }, 1100);
+});
+
+arrowLeft.addEventListener('click', () => {
+    let shrink = 1;
+    let id = setInterval(() => {
+        if (shrink <= 0) {
+            clearInterval(id);
+            slides[slideNum].style.display = 'none';
+        }
+        else {
+            slides[slideNum].style.transform = `scale(${shrink})`
+            console.log(slides[slideNum].style.transform)
+            shrink -= 0.01
+        }
+    }, 1);
+
+    setTimeout(() => {
+        if (slideNum === 0) slideNum = 2;
+        else slideNum--;
+        slides[slideNum].style.display = 'block';
+
+        let grow = 0;
+        let id2 = setInterval(() => {
+            if (grow >= 1) {
+                clearInterval(id2);
+            }
+            else {
+                slides[slideNum].style.transform = `scale(${grow})`
+                console.log(slides[slideNum].style.transform)
+                grow += 0.01
+            }
+        }, 1);
+    }, 1100);
+});
+
 
