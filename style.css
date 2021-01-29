@@ -24,6 +24,11 @@ legend {
     display: none;
 }
 
+input[type="radio"] {
+    visibility: hidden;
+    margin-right: -10px;
+}
+
 main {
     background-image: url("images/tropical.jpg");
     min-height: 100vh;
@@ -179,34 +184,97 @@ article {
     grid-template-columns: 70% 30%;
 }
 
-.slide1 .name {
+.slide1 .name, .slide1 .contact {
     display: flex;
+    gap: 30px;
 }
 
 .slide1 input {
     background-color: white;
 }
 
-.slide1 .name label {
+.slide1 input[type="text"] {
+    transition: border-color .5s;
+}
+
+.slide1 input[type="text"], 
+.slide1 input[type="email"], 
+.slide1 input[type="tel"],
+.slide1 input[type="date"] {
+    border-color: var(--dark-green);
+    outline: none;
+}
+
+.slide1 input[type="text"]:focus, 
+.slide1 input[type="email"]:focus, 
+.slide1 input[type="tel"]:focus,
+.slide1 input[type="date"]:focus {
+    border-color: var(--pink);
+}
+
+.slide1 label {
     display: flex;
     align-items: center;
 }
 
-.slide1 .name label p {
+.please-work {
+    display: flex;
+}
+
+.slide1 label p {
+    display: flex;
     margin-left: -190px;
-    margin-right: 170px;
     background-color: white;
     transition: transform .5s background .5s;
     padding: 0 5px;
 }
 
-.slide1 input[type=text] {
+.slide1 .inputs {
     border: solid 2px var(--dark-green);
     width: 200px;
     height: 30px;
     border-radius: 3px;
     padding: 10px;
 }   
+
+.slide1 .radio-button-container {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: solid 2px var(--dark-green);
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: border-color .5s;
+}
+
+.slide1 .radio-button-container:hover {
+    border-color: var(--pink);
+}
+
+.slide1 input[type=radio]:checked ~ .radio-button-container .radio-button {
+    width: 10px;
+    height: 10px;
+}
+
+.slide1 input[type=radio]:checked ~ .radio-button-container {
+    border-color: var(--pink);
+}
+
+.slide1 .radio-button {
+    width: 0px;
+    height: 0px;
+    background-color: var(--pink);
+    border-radius: 50%;
+    transition: width .25s, height .25s;
+}
+
+.gender {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
 
 footer {
     background-color: var(--dark-green);

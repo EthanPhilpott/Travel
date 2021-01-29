@@ -25,26 +25,41 @@
                         <div class="user-info">
                             <div class="user-info-fillables">
                                 <div class="name">
-                                    <label for="fname"><input type="text" name="fname" id="fname" class="inputs"><p>First</p></label>
-                                    <label for="lname"><input type="text" name="lname" id="lname" class="inputs"><p>Last</p></label>
+                                    <label for="fname"><input type="text" name="fname" id="fname" class="inputs"><span class="please-work"><p>First</p></span></label>
+                                    <label for="lname"><input type="text" name="lname" id="lname" class="inputs"><span class="please-work"><p>Last</p></span></label>
                                 </div>
                                 
                                 <div class="dob">
-                                    <label for="dob">Birthday</label>
-                                    <input type="date" name="dob" id="dob">
+                                    <label for="dob"><input type="text" name="dob" id="dob" class="inputs"><span class="please-work"><p>Birthday</p></span></label>
                                 </div>
 
                                 <div class="gender">
-                                    <label for="male"><input type="radio" name="gender" id="male">Male</label>
-                                    <label for="female"><input type="radio" name="gender" id="female">Female</label>
-                                    <label for="other"><input type="radio" name="gender" id="other">Other</label>
+                                    <label for="male">
+                                        <input type="radio" name="gender" id="male">
+                                        <div class="radio-button-container">
+                                            <div class="radio-button"></div>
+                                        </div>
+                                        Male
+                                    </label>
+                                    <label for="female">
+                                        <input type="radio" name="gender" id="female">
+                                        <div class="radio-button-container">
+                                            <div class="radio-button"></div>
+                                        </div>
+                                        Female
+                                    </label>
+                                    <label for="other">
+                                        <input type="radio" name="gender" id="other">
+                                        <div class="radio-button-container">
+                                            <div class="radio-button"></div>
+                                        </div>
+                                        Other
+                                    </label>
                                 </div>
 
                                 <div class="contact">
-                                    <label for="pnum">Phone Number</label>
-                                    <input type="tel" name="pnum" id="pnum" placeholder="555-555-5555">
-                                    <label for="email">Email</label>
-                                    <input type="email" name="email" id="email">
+                                    <label for="pnum"><input type="tel" name="pnum" id="pnum" class="inputs"><span class="please-work"><p>Phone Number</p></span></label>
+                                    <label for="email"><input type="email" name="email" id="email" class="inputs"><span class="please-work"><p>Email</p></span></label>
                                 </div>
                             </div>
                             <div class="pi-graphic">
