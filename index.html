@@ -1,264 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Travel</title>
-        <link rel="stylesheet" href="style.css">
-
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <header>
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+ 
+<body>
+    <div class="first-col">
+        <h3>PASSENGER TRAVEL FORM</h3>
+        <h4>( * is required)</h4>
+        <label for="firstName">First Name*</label>
+        <input type="text" value="Kyle" id="firstName" placeholder="First Name">
+        <label for="lastName">Last Name*</label>
+        <input type="text" value="Peck" id="lastName" placeholder="Last Name">
+        <div class="col">
+            <label for="DoB">Date of Birth*</label>
+            <input type="date" value="1990-10-06" id="DoB" placeholder="MM/DD/YYYY" class="space">
+        </div>
+        <label for="departing">Departure City*</label>
+        <input type="text" value="Phoenix, AZ" id="departing" placeholder="City, State (Phoenix, AZ)">
+        <label for="arriving">Arrival City*</label>
+        <input type="text" value="Atlanta, GA" id="arriving" placeholder="City, State (Atlanta, GA)">
+        <div class="col">
+            <label for="leaveDate">Date leaving*</label>
+            <input type="date" value="2021-01-27" name="leaveDate" id="leaveDate" placeholder="MM/DD/YYYY">
+        </div>
+        <div class="col space">
+            <label for="returnDate">Date Returning*</label>
+            <input type="date" value="2021-01-30" name="returnDate" id="returnDate" placeholder="MM/DD/YYYY">
+        </div>
+        <div class="col space">
+            <label for="bags" class="bags">How many bags?</label>
+            <input type="text" class="bags" name="bags" id="bags" placeholder="#" value="0">
+        </div>
+        <label for="meal" class="lessspace">What kind of meal would you like?</label>
+        <div class="col space">
+            <div class="meals">
+                <div>
+                    <label for="chick">Chicken</label>
+                    <input checked type="radio" name="meal" id="chick" value="chicken">
+                </div>
+                <div>
+                    <label for="fish">Fish</label>
+                    <input type="radio" name="meal" id="fish" value="fish">
+                </div>
+                <div>
+                    <label for="veg">Vegetarian</label>
+                    <input type="radio" name="meal" id="veg" value="veggie">
+                </div>
+            </div>
+        </div>
+        <label for="extra" class="lessspace">Order your extras (only 10$ each!)</label>
+        <div class="col extras lessspace">
+            <label for="legroom">Extra Leg Room?</label>
+            <input checked type="checkbox" name="extra" id="legroom" value="legroom">
+        </div>
+        <div class="col extras lessspace">
+            <label for="window">Window Seat?</label>
+            <input type="checkbox" name="extra" id="window" value="window">
+        </div>
+        <div class="col extras lessspace">
+            <label for="headphones">Head Phones?</label>
+            <input type="checkbox" name="extra" id="headphones" value="headphones">
+        </div>
+        <div class="col extras space">
+            <label for="moreFood">Second Serving of Meal?</label>
+            <input checked type="checkbox" name="extra" id="moreFood" value="food">
+        </div>
+ 
+        <button id="submit">Submit Passenger Info</button>
+ 
+    </div>
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+ 
+    <div class="second-col">
+        <div class="col space">
+            <button id="print" onclick="search()">Search</button>
+            <input id="search" style="margin-left: 10px;" type="text" placeholder="first last">
+            <p style="margin-left: 10px;">Sort By:</p>
+            <select style="margin-left: 10px;" name="users" id="dropDown">
+                <option value="id">ID</option>
+                <option value="firstName">First Name</option>
+                <option value="lastName">Last Name</option>
+            </select>
+            <button onclick="print()" id="print">Print All Names</button>
+        </div>
+        <div class="col">
+            <label for="firstName">First Name</label>
+            <input type="text" id="outfirstName" placeholder="First Name">
+            <label for="lastName" style="margin-left: 10px;">Last Name</label>
+            <input type="text" id="outlastName" placeholder="Last Name">
+        </div>
+        <div class="col">
+            <label for="DoB">Date of Birth</label>
+            <input type="date" id="outDoB" placeholder="MM/DD/YYYY">
+            <label for="bags" class="bags" style="margin-left: 10px">Bags</label>
+            <input type="text" class="bags" name="bags" id="outbags" placeholder="#">
+        </div>
+        <div class="row">
+            <label for="departing">Departing*</label>
+            <input style="margin-left: 10px" type="text" id="outdeparting" placeholder="City, State (Phoenix, AZ)">
+        </div>
+        <div class="row">
+            <label for="arriving">Arrivaling*</label>
+            <input style="margin-left: 10px" type="text" id="outarriving" placeholder="City, State (Atlanta, GA)">
+        </div>
+        <div class="row">
+            <label for="leaveDate">Date leaving</label>
+            <input type="date" name="leaveDate" id="outleaveDate" placeholder="MM/DD/YYYY">
+            <label for="returnDate" style="margin-left: 10px">Date Returning</label>
+            <input type="date" name="returnDate" id="outreturnDate" placeholder="MM/DD/YYYY">
+        </div>
+        <div class="row" style="margin-top: 10px;">
+            <p style="margin-right: 10px; width: 120px;">Trip Duration:</p>
+            <p style="width:75px;" id="outdurration" type="text">
+            <p>Meal:</p>
+            <input style="width: 150px;" id="outmeal" type="text">
+            <p style="margin-left: 20px; margin-right: 10px;">Age:</p>
+            <p style="width: 50px;" id="outage" type="text">
+        </div>
+        <div class="row">
+            <p>Extras:</p>
+            <input id="outextras" type="text">
+            <p style="margin-left: 20px;">Cost:</p>
+            <p id="outcost" style="margin-left: 10px;">$300</p>
+        </div>
+        <button onclick="updateList()">Submit Changes</button>
+        <div id="success"></div>
+        <div id="names">
             
-        </header>
-
-        <main>
-            <article>
-                <section class="form">
-                    <fieldset class="slide slide1">
-                        <legend>Personal Information</legend>
-                        <h2>Personal Information</h2>
-
-                        <div class="user-info">
-                            <div class="user-info-fillables">
-                                <div class="name">
-                                    <div class="fname">
-                                        <img src="images/f.svg" alt="F">
-                                        <label for="fname"><input type="text" name="fname" id="fname" class="inputs"><span class="please-work"><p>First</p></span></label>
-                                    </div>
-                                    <div class="dot-container">
-                                        <div class="dot"></div>
-                                        <div class="dot"></div>
-                                        <div class="dot"></div>
-                                    </div>
-                                    <div class="lname">
-                                        <img src="images/l.svg" alt="L">
-                                        <label for="lname"><input type="text" name="lname" id="lname" class="inputs"><span class="please-work"><p>Last</p></span></label>
-                                    </div>
-                                </div>
-
-                                <div class="dob">
-                                    <img src="images/calendar.svg" alt="calander">
-                                    <label for="dob">
-                                        <input type="text" name="dob" id="dob" class="inputs">
-                                        <span class="please-work"><p>Birthday</p></span>
-                                    </label>
-                                </div>
-
-                                <div class="contact">
-                                    <div class="pnum">
-                                        <img src="images/phone-call.svg" alt="phone">
-                                        <label for="pnum"><input type="tel" name="pnum" id="pnum" class="inputs"><span class="please-work"><p>Phone Number</p></span></label>
-                                    </div>
-                                    <div class="dot-container">
-                                        <div class="dot"></div>
-                                        <div class="dot"></div>
-                                        <div class="dot"></div>
-                                    </div>
-                                    <div class="email">
-                                        <img src="images/email.svg" alt="email">
-                                        <label for="email"><input type="email" name="email" id="email" class="inputs"><span class="please-work"><p>Email</p></span></label>
-                                    </div>
-                                </div>
-
-                                <div class="gender">
-                                    <label for="male">
-                                        <input type="radio" name="gender" id="male">
-                                        <div class="radio-button-container">
-                                            <div class="radio-button"></div>
-                                        </div>
-                                        Male
-                                    </label>
-                                    <label for="female">
-                                        <input type="radio" name="gender" id="female">
-                                        <div class="radio-button-container">
-                                            <div class="radio-button"></div>
-                                        </div>
-                                        Female
-                                    </label>
-                                    <label for="other">
-                                        <input type="radio" name="gender" id="other">
-                                        <div class="radio-button-container">
-                                            <div class="radio-button"></div>
-                                        </div>
-                                        Other
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="pi-graphic">
-                                <div class="pi-graphic-data">
-                                    <p id="pi-graphic-fname">Firstname</p>
-                                    <p id="pi-graphic-lname">Lastname</p>
-                                </div>
-                                <div class="pi-graphic-imgs">
-                                    <img src="images/Male-Female.svg" alt="male" class="male" id="imgMale">
-                                    <img src="images/Male-Female.svg" alt="female" class="female" id="imgFemale">
-                                    <img src="images/question.svg" alt="question" class="other" id="imgOther">
-                                </div>
-                            </div>
-                        </div>
-                    </fieldset>
-
-                    <fieldset class="slide slide2">
-                        <legend>Date and City</legend>
-
-                        <h2>Date and City</h2>
-
-                        <div class="date-and-city">
-                            <div class="date-and-city-info">
-                                <div class="leaving">
-                                    <label for="city-leaving">
-                                        <input type="text" name="city-leaving" id="city-leaving" class="inputs">
-                                        <span class="please-work"><p>City Leaving</p></span>
-                                    </label>
-                                    <label for="date-leaving">
-                                        <input type="text" name="date-leaving" id="date-leaving" class="inputs">
-                                        <span class="please-work"><p>Date Leaving</p></span>
-                                    </label>
-                                </div>
-                                <div class="dot-container">
-                                    <div class="dot"></div>
-                                    <div class="dot"></div>
-                                    <div class="dot"></div>
-                                </div>
-                                <div class="returning">
-                                    <label for="city-going">
-                                        <input type="text" name="city-going" id="city-going" class="inputs">
-                                        <span class="please-work"><p>City Going</p></span>
-                                    </label>
-                                    <label for="date-returning">
-                                        <input type="text" name="date-returning" id="date-returning" class="inputs">
-                                        <span class="please-work"><p>Date Returning</p></span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="date-and-city-graphic">
-                                <img src="images/buildings.svg" alt="City">
-                                <img src="images/airplane.svg" alt="plane">
-                                <img src="images/town.svg" alt="town">
-                            </div>
-                        </div>
-                        
-                    </fieldset>
-                    
-                    <fieldset class="slide slide3">
-                        <legend>Baggage, Food, and Extras</legend>
-
-                        <h2>Baggage, Food, and Extras</h2>
-
-                        <div class="baggage-and-extras">
-                            <div class="side">
-                                <div class="baggage">
-                                    <p>Amount of Bags +20$: </p>
-                                    <div class="number-input">
-                                        <div class="updown down" id="down">-</div>
-                                        <input type="number" name="baggage" id="baggage" value="0">
-                                        <div class="updown up" id="up">+</div>
-                                    </div>
-                                </div>
-                                <div class="hehe">
-                                    <div class="food">
-                                        <label for="chicken">
-                                            <input type="radio" name="food" id="chicken">
-                                            <div class="radio-button-container">
-                                                <div class="radio-button"></div>
-                                            </div>
-                                            Chicken
-                                        </label>
-                                        <label for="fish">
-                                            <input type="radio" name="food" id="fish">
-                                            <div class="radio-button-container">
-                                                <div class="radio-button"></div>
-                                            </div>
-                                            Fish
-                                        </label>
-                                        <label for="vegetarian">
-                                            <input type="radio" name="food" id="vegetarian">
-                                            <div class="radio-button-container">
-                                                <div class="radio-button"></div>
-                                            </div>
-                                            Vegetarian
-                                        </label>
-                                    </div>
-                                    <div class="extras">
-                                        <label for="exLegroom">
-                                            <input type="checkbox" name="exLegroom" id="exLegroom">
-                                            <div class="check">
-                                                <div class="short"></div>
-                                                <div class="long"></div>
-                                            </div>
-                                            Extra Legroom +10$
-                                        </label>
-                                        <label for="window-seat">
-                                            <input type="checkbox" name="window-seat" id="window-seat">
-                                            <div class="check">
-                                                <div class="short"></div>
-                                                <div class="long"></div>
-                                            </div>
-                                            Window Seat +10$
-                                        </label>
-                                        <label for="headphones">
-                                            <input type="checkbox" name="headphones" id="headphones">
-                                            <div class="check">
-                                                <div class="short"></div>
-                                                <div class="long"></div>
-                                            </div>
-                                            Headphones +10$
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="not-side">
-                                <p id="append">Append</p>
-                            </div>
-                        </div>
-                    </fieldset>
-                </section>
-
-                <section class="slider-nav">
-                    <div class="arrow-left" id="arrow-left">
-                        <div class="arrow arrow-up"></div>
-                        <div class="arrow arrow-down"></div>
-                    </div>
-
-                    <div class="slider-buttons">
-                        <div class="slider-button">
-                            <p>1</p>
-                        </div>
-                        <div class="slider-button">
-                            <p>2</p>
-                        </div>
-                        <div class="slider-button">
-                            <p>3</p>
-                        </div>
-                    </div>
-
-                    <div class="arrow-right" id="arrow-right">
-                        <div class="arrow arrow-up"></div>
-                        <div class="arrow arrow-down"></div>
-                    </div>
-                </section>
-            </article>
-        </main>
-
-        <footer>
-            <div><a href='https://www.freepik.com/vectors/background'>Background vector created by pikisuperstar - www.freepik.com</a></div>
-            <div>People Icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-            <div>Question Mark Icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-            <div>Calander Icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-            <div>Phone Icon made by <a href="https://www.flaticon.com/authors/gregor-cresnar" title="Gregor Cresnar">Gregor Cresnar</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-            <div>Email Icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-            <div>F Icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-            <div>L Icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-            <div>City Icon made by <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-            <div>Town Icon made by <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-            <div>Plane Icon made by <a href="https://www.flaticon.com/authors/pause08" title="Pause08">Pause08</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-            <div>Suitcase Icon made by <a href="https://www.flaticon.com/authors/dinosoftlabs" title="DinosoftLabs">DinosoftLabs</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-        </footer>
-
-        <script src="script.js"></script>
-    </body>
+        </div>
+ 
+    </div>
+ 
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="list.js"></script>
+</body>
+ 
 </html>
+ 
+
