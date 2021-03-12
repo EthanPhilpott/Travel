@@ -1,6 +1,21 @@
 $(function () {
     let users = [];
     $("#submit").on("click", function () {
+        let meal;
+        $(`input[name="meal"]`).each(function () {
+            if (this.checked) {
+                meal = this.value;
+            }
+        });
+        let extras = "";
+        let cost = 300;
+        $(`input[name="extra"]`).each(function () {
+            if (this.checked) {
+                extras += this.value + " ";
+                cost += 10;
+            }
+        });
+        console.log(meal);
         users.push({
             fname: firstName.value,
             lname: lastName.value,
@@ -9,18 +24,20 @@ $(function () {
             arrive: arriving.value,
             dleave: leaveDate.value,
             dreturn: returnDate.value,
-            bags: bags.values,
-            meal: $("first-col input[name='meal']:checked").value,
-            extras: $("first-col input[name='etxra']:checked").value,
+            bags: bags.value,
+            meal: meal,
+            extras: extras,
             tripdurr:
                 (new Date(leaveDate.value) - new Date(returnDate.value)) / 1000,
-            cost: $("first-col input[name='etxra']:checked").length * 10,
+            cost: cost,
+            age: Math.floor(
+                (Date.now() - new Date(DoB.value)) /
+                    (1000 * 60 * 60 * 60 * 24 * 6)
+            ),
         });
     });
 
     $("#search").on("input", function (e) {
-        console.log(users);
-        console.log($("#search").val());
         let user = users.find(
             (obj) => obj.fname + " " + obj.lname === $("#search").val()
         );
@@ -33,10 +50,19 @@ $(function () {
             outarriving.value = user.arrive;
             outleaveDate.value = user.dleave;
             outreturnDate.value = user.dreturn;
-            outdurration.value = user.tripdurr;
+            outdurration.innerText = Math.abs(user.tripdurr);
             outmeal.value = user.meal;
             outextras.value = user.extras;
-            outcost.value = user.cost;
+            outcost.innerText = user.cost;
+            outage.innerText = user.age;
         }
+    });
+
+    $("#print").on("click", function () {
+        let tempval = "";
+        for (let val of users) {
+            tempval += val.fname + " " + val.lname + "<br>";
+        }
+        $("#names").html(tempval);
     });
 });
